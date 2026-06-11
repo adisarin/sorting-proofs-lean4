@@ -1,1 +1,2 @@
 import SortingProofs.MergeSort
+import SortingProofs.InsertionSort
