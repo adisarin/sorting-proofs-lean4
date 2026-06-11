@@ -1,6 +1,7 @@
 import Mathlib
 set_option linter.style.header false
-
+set_option linter.unusedSimpArgs false
+set_option linter.style.setOption false
 /-!
 # Binary Trees and N-ary Trees: Proof Techniques on Recursive Data Structures
 
@@ -131,15 +132,16 @@ theorem BTree.insert_size {α : Type*} (le : α → α → Bool) (a : α) (t : B
     simp only [BTree.insert, BTree.size]
     split
     · next h =>
-      simp [BTree.size]
-      rcases ihl with h1 | h1 <;> omega
+      simp only [BTree.size]
+      omega
     · next h =>
       split
       · next h2 =>
-        simp [BTree.size]
-        rcases ihr with h1 | h1 <;> omega
+        simp only [BTree.size]
+        omega
       · next h2 =>
-        simp [BTree.size]
+        right
+        trivial
 
 -- ============================================
 -- PART 3: Rose Trees (N-ary Trees)
