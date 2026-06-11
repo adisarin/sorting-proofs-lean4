@@ -1,3 +1,5 @@
 import SortingProofs.MergeSort
 import SortingProofs.InsertionSort
 import SortingProofs.Comparison
+import SortingProofs.Trees
+
